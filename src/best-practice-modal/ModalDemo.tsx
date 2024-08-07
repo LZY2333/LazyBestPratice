@@ -39,10 +39,14 @@ const ModalDemo = React.forwardRef<ModalDemoRefType, ModalDemoPropsType>((_props
 
     // 用户操作
     const handleConfirm = async () => {
-        setVisible(false);
-        const formResult = await form.validateFields();
-        // 获取表单数据后，可 await 更多后端校验等，如果成功，再resolve
-        promiseRef.current?.resolve(formResult);
+        try {
+            setVisible(false);
+            const formResult = await form.validateFields();
+            // 获取表单数据后，可 await 更多后端校验等，如果成功，再resolve
+            promiseRef.current?.resolve(formResult);
+        } catch (error) {
+            console.log('error', error);
+        }
     };
     const handleCancel = () => {
         setVisible(false);
