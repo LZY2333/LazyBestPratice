@@ -142,11 +142,11 @@ const DateRangeField = ({ label = "日期区间" }) => {
 
 ## 🔥 最终总结
 
-| 需求 | 方案 |
-|------|------|
-| `form` 只存 `startTime` 和 `endTime`，不存 `dateRange` | `normalize` 处理 |
+| 需求                                                               | 方案                           |
+| ------------------------------------------------------------------ | ------------------------------ |
+| `form` 只存 `startTime` 和 `endTime`，不存 `dateRange`             | `normalize` 处理               |
 | `setFieldsValue({ startTime, endTime })` 自动更新 `RangePicker` UI | 依赖 `value` 计算 `rangeValue` |
-| 在任何 `Form` 里轻松复用 | 封装 `DateRangeField` 组件 |
+| 在任何 `Form` 里轻松复用                                           | 封装 `DateRangeField` 组件     |
 
 最终，我们通过 `DateRangeField` 组件，完美解决了 `Form` 只关注 `startTime` 和 `endTime`，完全感知不到 `dateRange`！
 
@@ -177,3 +177,13 @@ TSX部分在最外层使用`type !== 当前页签Type`时, `display: none` 或 `
 
 > 没有使用父组件储存数据的方式，后续新增页签时无需修改父组件内容，各自页签管理各自数据，修改时也能更少出错
 >
+
+## 自定义控件
+
+我们封装业务组件时，经常会考虑一个问题
+
+就是我希望，这个组件可以直接处理好数据，而不需要我后续再处理
+
+因为对于这个字段来说，这个处理的逻辑是固定的，比如`2025/06/16` 转换为 `2025-06-16` 用于传给后端
+
+那么我希望，这个处理能直接封装在组件内部，跟着组件走。
