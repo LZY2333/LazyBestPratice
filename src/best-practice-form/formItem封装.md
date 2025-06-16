@@ -187,3 +187,29 @@ TSX部分在最外层使用`type !== 当前页签Type`时, `display: none` 或 `
 因为对于这个字段来说，这个处理的逻辑是固定的，比如`2025/06/16` 转换为 `2025-06-16` 用于传给后端
 
 那么我希望，这个处理能直接封装在组件内部，跟着组件走。
+
+## 复杂的表单数据结构
+
+有时候，我们希望我的一个表格控件能直接生成一个对象, 如:
+```ts
+const formData = {
+    name:'lzy',
+    address: {
+        province: "广东省",
+        city: "广州市",
+        district: "天河区",
+        detailAddress: "珠江新城华夏路10号"
+   }
+}
+```
+我希望这么一个控件能直接输出对象类型的address字段,如:
+```jsx
+<FormItem name="address">
+    <Address />
+<FormItem>
+```
+这个Address控件该怎么写？
+
+更复杂的，我做过一个excel列与系统字段映射表单选择功能。
+
+form内嵌table，我将table封装为一整个控件，输出为一个字段。
