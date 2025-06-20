@@ -1,10 +1,9 @@
-import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import ModalDemoTestPage from './best-practice-modal/ModalDemoTestPage';
+import FormDemo from './best-practice-form/FormDemo';
 function App() {
     return (
         <Router>
-            <ModalDemoTestPage />
+            <FormDemo />
         </Router>
     );
 }

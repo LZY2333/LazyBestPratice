@@ -212,4 +212,10 @@ const formData = {
 
 更复杂的，我做过一个excel列与系统字段映射表单选择功能。
 
-form内嵌table，我将table封装为一整个控件，输出为一个字段。
+form内嵌table，我将table封装为一整个控件，输出为一个字段。                                                                                                  
+
+## formItem与字段绑定，同理tableColumn也可与字段绑定
+
+## 多FormItem公用统一数据，联动过滤下拉框
+
+通过封装Agent.protocolNo Agent.account Agent.usage 实现联动?
