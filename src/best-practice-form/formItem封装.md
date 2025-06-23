@@ -219,3 +219,7 @@ form内嵌table，我将table封装为一整个控件，输出为一个字段。
 ## 多FormItem公用统一数据，联动过滤下拉框
 
 通过封装Agent.protocolNo Agent.account Agent.usage 实现联动?
+
+
+## table单数据源
+

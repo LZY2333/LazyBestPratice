@@ -1,11 +1,14 @@
-import { Form } from "antd";
-import { DateRange } from "./FormItemsModuleA";
+import { Form } from 'antd';
+import { DateRange, Gender, Name, CustomizeGender } from './FormItemsModuleA';
 
 const FormDemo = () => {
     const [form] = Form.useForm();
     return (
         <>
-            <Form form={form} initialValues={{ dateStart: "2025/06/01", dateEnd: "2025/06/02" }}>
+            <Form form={form}>
+                <Name />
+                <Gender />
+                <CustomizeGender />
                 <DateRange />
             </Form>
             <button
