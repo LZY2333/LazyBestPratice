@@ -1,5 +1,5 @@
 import { Form } from 'antd';
-import { DateRange, Gender, Name, CustomizeGender } from './FormItemsModuleA';
+import { DateRange, Gender, Name, CustomizeGender, AmountStartAmountEnd } from './FormItemsModuleA';
 
 const FormDemo = () => {
     const [form] = Form.useForm();
@@ -9,6 +9,7 @@ const FormDemo = () => {
                 <Name />
                 <Gender />
                 <CustomizeGender />
+                <AmountStartAmountEnd />
                 <DateRange />
             </Form>
             <button
